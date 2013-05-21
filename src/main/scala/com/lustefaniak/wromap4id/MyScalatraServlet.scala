@@ -1,6 +1,8 @@
 package com.lustefaniak.wromap4id
 
-class MyScalatraServlet extends Wromap4idStack {
+import org.scalatra.scalate.ScalateSupport
+
+class MyScalatraServlet extends Wromap4idStack with ScalateSupport{
 
   val baseUrl = "http://gis.um.wroc.pl/services/ogc_orto/MapServer/WMSServer?LAYERS=ortofotomapa_2011&TRANSPARENT=FALSE&FORMAT=image%2Fpng&SERVICE=WMS&VERSION=1.1.1&REQUEST=GetMap&STYLES=&SRS=CRS%3A84&BBOX=%%BBOX%%&WIDTH=256&HEIGHT=256"
 
@@ -34,7 +36,7 @@ class MyScalatraServlet extends Wromap4idStack {
     finalUrl
   }
 
-  get("/ortomap/:x/:y/:z") {
+  get("/ortomap/:z/:x/:y") {
     val x = params("x").toInt
     val y = params("y").toInt
     val z = params("z").toInt
@@ -43,5 +45,14 @@ class MyScalatraServlet extends Wromap4idStack {
 
     redirect(finalUrl)
   }
+
+
+
+  get("/") {
+    contentType = "text/html"
+
+    layoutTemplate("index.ssp")
+  }
+
 
 }

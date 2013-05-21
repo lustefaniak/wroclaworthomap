@@ -1,0 +1,52 @@
+<%@ var message: String = "Hello" %>
+#do(layout("layout.ssp"))
+
+
+      <div class="hero-unit">
+        <p>Ever wanted to use Id editor to map your Wroclaw neighbourhood but had no high quality maps?</p>
+        <p>Now You can use Official Wroclaw Ortofotomap!</p>
+      </div>
+
+      <div class="row"><div class="span12" id="map" style="height: 500px"></div></div>
+
+      <div class="row">
+              <div class="span12">
+                <h2>How to setup?</h2>
+
+                    <p>First login to the <a href="http://www.openstreetmap.org/edit?editor=id">ID editor</a> by going to <pre>http://www.openstreetmap.org/edit?editor=id</pre></p>
+                    <p>Use layers button to ad custom layer:</p>
+                    <img src="${context.contextPath}/customlayer.png" class="img-polaroid">
+
+                    <p>In a popup window which apears enter:
+
+<pre>http://wroclaw.herokuapp.com/ortomap/{z}/{x}/{y}</pre>
+<p>
+<h3>Enjoy much nicer background image:</h3>
+<img src="${context.contextPath}/enjoy.png" class="img-polaroid">
+              </div>
+            </div>
+
+      <div class="row">
+              <div class="span12">
+                <h2>Orthofotomap 2012?</h2>
+                <p>Unfortunately it is not available right now as WMS. What is available at geoportal maps requires token, so it won't be easy to implement that for Open Stret Map Id editor. When it gets published I will switch web applicatin to use it.</p>
+              </div>
+            </div>
+
+      <div class="row">
+              <div class="span12">
+                <h2>Need some code?</h2>
+                <p>Source code is available at my Github repository: <a href="http://github.com/lustefaniak/wroclaworthomap">lustefaniak/wroclaworthomap</a></p>
+              </div>
+            </div>
+
+      <div class="row">
+              <div class="span12">
+                <h2>Legal:</h2>
+                <p>Application is not a proxy but it works as a request redirector, in the end, we are not a user of Wrocław Spatial Information System data, you are. If you want to use imagery in any way you must comply with <a href="http://geoportal.wroclaw.pl/www/en/udostep-danych.shtml">Wrocław Spatial Information System terms of service</a></p>
+              </div>
+            </div>
+
+
+#end
+
