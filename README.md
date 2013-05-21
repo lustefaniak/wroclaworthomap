@@ -9,8 +9,9 @@ You can use deployed application at [http://wroclaw.herokuapp.com/](http://wrocl
 ## Build & Run ##
 
 ```sh
-$ cd wromap4id
-$ ./sbt
+$ git clone https://github.com/lustefaniak/wroclaworthomap.git wroclaworthomap
+$ cd wroclaworthomap
+$ sbt
 > container:start
 > browse
 ```
